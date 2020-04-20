@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <h1>Create Product</h1>
+    <form method = 'POST' enctype="multipart/form-data">
+        {% csrf_token %}
+            {% for field in product_create %}
+                <p>{{field.label}}</p>
+                <p>{{ field }}</p>
+                    {{ form }}
+            {% endfor %}
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

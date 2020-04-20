@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <center><a class="btn btn-success" href="{% url 'create_category' %}">+ Add New Category</a></center>
+    <br>
+    <br>
+    {% for category in categories %}
+        <h2>{{ category.name }}</h2>
+        <a class="btn btn-info" href="update/{{category.id}}" id='{{category.id}}'>edit</a>
+        <a class="btn btn-danger" href="delete/{{category.id}}" id='{{category.id}}'>delete</a>
+        <br>
+        <br>
+        <br>
+    {% endfor %}
+{% endblock %}

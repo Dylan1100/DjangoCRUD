@@ -1,0 +1,29 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <head>
+        <title>Django Project</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .image { 
+                width: auto; 
+                height: 10%; 
+            } 
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-dark">
+            <a class="btn btn-primary" href="{% url 'category_list' %}">Category Index</a>
+            <a class="btn btn-primary" href="{% url 'product_index' %}">Product Index</a>
+            <a class="btn btn-primary" href="{% url 'admin:index' %}">Admin</a>
+            <a class="btn btn-primary" href="{% url 'create_product' %}">Add Product</a>
+        </nav>
+        <br>
+        <br>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
